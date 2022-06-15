@@ -1,0 +1,40 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2020-10-28 13:32:14 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:17 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:19 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:20 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:37 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:38 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:39 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:39 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:58 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:58 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:58 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:58 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:32:59 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 13:34:46 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:25 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:32 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:34 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:34 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:40 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:55:54 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:56:02 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:56:33 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:56:52 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 15:59:54 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 16:00:42 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 16:01:11 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 11:41:33 --> 404 Page Not Found: SendOTP/index
+ERROR - 2020-10-28 11:41:35 --> 404 Page Not Found: SendOTP/index
+ERROR - 2020-10-28 11:41:45 --> 404 Page Not Found: SendOTP/index
+ERROR - 2020-10-28 18:46:53 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:46:55 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:47:43 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:47:48 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:47:50 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:47:56 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 18:48:06 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 19:53:33 --> 404 Page Not Found: Delivery/delivery
+ERROR - 2020-10-28 19:54:35 --> Severity: error --> Exception: Too few arguments to function CI_Input::get_post(), 0 passed in C:\xampp\htdocs\rawpressery\web\app\controllers\Delivery.php on line 212 and at least 1 expected C:\xampp\htdocs\rawpressery\web\core\core\Input.php 284

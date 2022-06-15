@@ -1,0 +1,133 @@
+<script>
+    console.log('<?php echo $label ?>');
+
+    path:- \rawpressery\web\app\views\cart\index.php
+    webengage.track("Cart Viewed", {
+        "Product Id": "<?php echo rtrim($productIdStr, ","); ?>",
+        "Product Name": "<?php echo rtrim($productNameStr, ","); ?>",
+        "Category Id": "<?php echo rtrim($categoryIdStr, ","); ?>",
+        "Category Name": "<?php echo rtrim($categoryNameStr, ","); ?>",
+        "Quantity": "<?php echo rtrim($qtyStr, ","); ?>",
+        "Price": "<?php echo rtrim($priceStr, ","); ?>",
+        "No. Of Products": <?php echo $count; ?>,
+        "Total Value": <?php echo $total; ?>,
+        "Product Details": [<?php echo $productStr; ?>]});
+    </script>
+
+    <script>
+    path:- rawpressery\web\app\views\checkout.php
+    find:- url: '<?= base_url('checkout/placeOrder'); ?>',
+    webengage.track("Checkout Completed", {
+        "Product Id": "<?php echo rtrim($productIdStr, ","); ?>",
+        "Product Name": "<?php echo rtrim($productNameStr, ","); ?>",
+        "Price": "<?php echo rtrim($priceStr, ","); ?>",
+        "Category Id": "<?php echo rtrim($categoryIdStr, ","); ?>",
+        "Category Name": "<?php echo rtrim($categoryNameStr, ","); ?>",
+        "Quantity": "<?php echo rtrim($qtyStr, ","); ?>",
+        "Amount": <?= $total; ?>,
+        "Status": "<?= $paymentStatus; ?>",
+    });
+
+    </script>
+    path:- \rawpressery\web\app\views\footer.php
+    find:- $('#proceed_remove_item').click(function () {
+    webengage.track("Removed from Cart", {
+        "Product Id": productid,
+        "Product Name": productname,
+        "Category Name": categoryname,
+        "Price": price,
+        "Quantity": quantity,
+        "Currency": currency,
+        "Category Id": categoryid,
+        "Product Image": productimage});
+
+    path:- \rawpressery\web\app\views\footer.php
+    find:- $.post('<?= base_url('cart/addToCart') ?>'
+    webengage.track("Added To Cart", {
+        "Product Id": productid,
+        "Product Name": productname,
+        "Category Name": categoryname,
+        "Price": price,
+        "Quantity": quantity,
+        "Currency": currency,
+        "Category Id": categoryid,
+        "Product Image": productimage});
+
+    path:- \rawpressery\web\app\views\cart\index.php
+    webengage.track("Checkout Started", {
+        "Product Id": "<?php echo rtrim($productIdStr, ","); ?>",
+        "Product Name": "<?php echo rtrim($productNameStr, ","); ?>",
+        "Category Id": "<?php echo rtrim($categoryIdStr, ","); ?>",
+        "Category Name": "<?php echo rtrim($categoryNameStr, ","); ?>",
+        "Quantity": "<?php echo rtrim($qtyStr, ","); ?>",
+        "Price": "<?php echo rtrim($priceStr, ","); ?>",
+        "No. Of Products": <?php echo $count; ?>,
+        "Total Value": <?php echo $total; ?>,
+        'City': '<?php echo $defaultBillingAddress["city"]; ?>',
+        'Shipping Information': <?php echo $shippingInfo; ?>,
+        'Product Details': [<?php echo $productStr; ?>], });
+
+    path:- rawpressery\web\app\views\checkout.php
+    find:- url: '<?= base_url('checkout/placeOrder'); ?>',
+    webengage.track("Checkout Completed", {
+        "Product Id": "<?php echo rtrim($productIdStr, ","); ?>",
+        "Product Name": "<?php echo rtrim($productNameStr, ","); ?>",
+        "Price": "<?php echo rtrim($priceStr, ","); ?>",
+        "Category Id": "<?php echo rtrim($categoryIdStr, ","); ?>",
+        "Category Name": "<?php echo rtrim($categoryNameStr, ","); ?>",
+        "Quantity": "<?php echo rtrim($qtyStr, ","); ?>",
+        "Estimated Delivery Day": "<?php echo $exp_delivery_date; ?>",
+        "Amount": <?= $orderAmount; ?>,
+        "Payment Method": "<?= $paymentMethod; ?>",
+        "Status": "Success",
+    });
+
+    path:- \rawpressery\web\app\views\footer.php
+    find:- $.post('<?= base_url('cart/applyCouponCode') ?>'
+    webengage.track("Coupon Code Applied", {
+            "Cart Value Before Discount" : <?php echo $cartBaseTotal; ?>,
+            "Cart Value After Discount" : <?php echo $cartGrandTotal; ?>,
+            "Coupon Code"   : "<?php echo $this->getCouponCode(); ?>",
+            "Status" : "success",
+            "Discount Value": <?php echo abs($totalCartDiscount); ?>
+        });
+
+    path:- rawpressery\web\app\views\product\juices.php
+    webengage.track("Category Viewed", {
+        "Category Name": "<?php echo $categoryName; ?>",
+        "Category Id": "<?php echo $catId; ?>",
+        "Item Count": <?php echo $_productCollection->count(); ?>
+    });
+
+    path:- rawpressery\web\app\views\product_detail\detail.php
+    webengage.track("Product Viewed", {
+        "Product Id": "<?php echo $_product->getId(); ?>",
+        "Product Name": "<?php echo $_product->getName(); ?>",
+        "Category Name": "<?php echo $categoryName; ?>",
+        "Category Id": "<?php echo $categoryID; ?>",
+        "Price": <?php echo $_product->getFinalPrice(); ?>,
+        "Currency": "<?php echo $currentCurrencyCode; ?>",
+        "Product Image": "<?php echo $full_path_url; ?>",
+    });
+
+    path:- /rawpresseryci/web/app/views/footer.php
+    find:- function searchAjaxProducts(searchText) {
+    webengage.track("Product Searched", {
+        "Search Keyword": searchText,
+        "Sorted By": "entity_id"
+    });
+
+
+controllers:-
+
+/home/beta/public_html/rawpresseryci/web/app/controllers/Cart.php
+/home/beta/public_html/rawpresseryci/web/app/controllers/Payment.php
+
+views:-
+/home/beta/public_html/rawpresseryci/web/app/views/header.php
+/home/beta/public_html/rawpresseryci/web/app/views/footer.php
+/home/beta/public_html/rawpresseryci/web/app/views/product/juices.php
+/home/beta/public_html/rawpresseryci/web/app/views/product_detail/detail.php
+/home/beta/public_html/rawpresseryci/web/app/views/thankYou.php
+/home/beta/public_html/rawpresseryci/web/app/views/checkout.php
+/home/beta/public_html/rawpresseryci/web/app/views/cart/index.php
